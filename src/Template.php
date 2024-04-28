@@ -1192,13 +1192,13 @@ class Template
         $parseStr = '';
 
         foreach ($array as $templateName) {
-            if (empty($templateName)) {
-                continue;
-            }
-
             if (str_starts_with($templateName, '$')) {
                 //支持加载变量文件名
                 $templateName = $this->get(substr($templateName, 1));
+            }
+
+            if (empty($templateName)) {
+                continue;
             }
 
             $template = $this->parseTemplateFile($templateName);
