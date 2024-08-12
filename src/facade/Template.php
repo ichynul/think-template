@@ -82,14 +82,3 @@ class Template extends Facade
         return 'think\Template';
     }
 }
-
-if (!function_exists('tp_htmlentities')) {
-    function tp_htmlentities($string)
-    {
-        if (is_null($string)) {
-            $string = '';
-        }
-
-        return htmlentities($string);
-    }
-}
