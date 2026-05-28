@@ -39,7 +39,7 @@ class File implements DriverInterface
             throw new Exception('cache write error:' . $cacheFile, 11602);
         }
 
-        if(php_sapi_name() === 'cli' && function_exists('opcache_invalidate')) {
+        if (php_sapi_name() === 'cli' && function_exists('opcache_invalidate')) {
             opcache_invalidate($cacheFile, true);
         }
     }
